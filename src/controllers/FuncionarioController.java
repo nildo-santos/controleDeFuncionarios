@@ -7,6 +7,7 @@ import java.util.UUID;
 
 import entities.Endereco;
 import entities.Funcionario;
+import repositories.FuncionarioRepository;
 
 public class FuncionarioController {
 
@@ -61,6 +62,9 @@ public class FuncionarioController {
 		
 		System.out.print("CEP...........................: ");
 		funcionario.getEndereco().setCep(scanner.nextLine());
+		
+		var funcionarioRepository = new FuncionarioRepository();
+		funcionarioRepository.inserir(funcionario);
 		
 		scanner.close();
 	}
